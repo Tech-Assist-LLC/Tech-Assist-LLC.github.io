@@ -1,130 +1,240 @@
-/* C&P from cyptian*/
-
+/* C&P from cyptian then edited to desire*/
 /*===================
-     base css (should act as defualt style?)
+     base css (acts as default)
 =====================*/
-
-body{
-	font-family: 'Montserrat', sans-serif;
-	font-size: 2em;
-	color: burlywood;
+* {
+  padding: 0;
+  margin: 0;
+  img{max-width: 80%}
+}
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2em;
+    color: burlywood;
     overflow-x: scroll;
     position: relative;
+    text-align: center;
     /* Background */
-    background-image: url('Assets/Grass%20Backround.jpg');
-    background-color:rgba(0, 0, 149, 0.70);
-    background-blend-mode:multiply;
+    background-image: url("Assets/webb-dark.png");
+    background-color: rgba(10, 10, 254, 0.78);
+    background-blend-mode: multiply;
     background-size: cover;
-    background-repeat: no-repeat, repeat;
+    background-repeat: round;
     height: 100svh;
     width: inherit;
     background-position: center;
     background-attachment: fixed;
-    
+}
+/*===================
+     header css
+=====================*/
+headbanner {
+  margin-left: -30%;
+  margin-right: -30%;
+}
+img.Banner {
+  margin-top: 5%;
+  width: 3000%;
+  height: 20svw;
+  object-fit: fill;
+  z-index: 5;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
-h1{
-    color: forestgreen;
-    text-align: center;
+h1 {
+  padding-top: 5%;
+  color: #b05454;
 }
 
-h2{
-    text-align: center;
+h2 {
     font-style: italic;
-    font-family: 'Dancing Script';
+    font-family: "Dancing Script";
+    margin-bottom: 1em;
 }
-h3{
-    padding: 0;
+/*===================
+/ header css
+=====================*/
+/*===================
+    | Nav css
+=====================*/
+nav {
+  margin: -5%;
+  margin-top: 0;
+  background: rgba(0, 0, 0, 0.34);
+  z-index: 100;
+  position:fixed;
+  justify-self: center;
+  border-radius: 0 0 2vw 2vw;
+  .menuItems {
+    list-style: none;
+    display:inline-flex;
+
+    li {
+      margin: 20px;
+
+      a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 400;
+        transition: all 0.5s ease-in-out;
+        position: relative;
+        text-transform: uppercase;
+
+        &::before {
+          content: attr(data-item);
+          transition: 0.5s;
+          color: #ff0000;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 0;
+          overflow: hidden;
+        }
+
+        &:hover {
+          &::before {
+            width: 100%;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+/*===================
+    / Nav css
+=====================*/
+p {margin: 2%}
+h3 {
     margin: 0;
-    color: cadetblue;
+    margin-top: 3em;
+    color: rgb(0, 217, 251);
 }
 .page {
-    margin: 5%;
+ margin: 3%
 }
 
 h6 {
     margin: 0;
     padding: 0;
+    text-align-last: center;
 }
 
-ul{
-  margin: 0;
-  padding: 0;
-  list-style: circle;
-}
-
-/*===================
-     header css
-=====================*/
-
-/*===================
-     bCard
-=====================*/
-.contactBox {
-    left: -36%;
-    width: 40%;
-    top: 30vh;
+ul {
     margin: 0;
     padding: 0;
+    list-style: circle;
+}
+
+/*===================
+     bCard (buisness card)
+=====================*/
+
+.contactBox {
+    left: -30%;
+    width: 33%;
+    top: 30svh;
     display: flex;
     overflow: hidden;
     position: fixed;
-    z-index: 1;
-    background-color: brown;
+    z-index: 19;
+    background-color: #b05454;
     border-radius: 0 2vw 2vw 0;
     transition: transform 1s ease-in-out;
 }
 .contactBox:hover {
     transition: 1.5s ease;
-    transform: translateX(81.5%);
+    transform: translateX(90%);
 }
 
 .contactInfo {
     writing-mode: vertical-rl;
     text-orientation: upright;
-    text-align: left;
-    left: 0%;
-    margin 0px;
-    padding: 0px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    text-align: right;
+    margin: 2%;
+    margin-top: 2%;
     font-size: 1.8svw;
-    min-height: inherit;
     bottom: 0;
-    max-height: 0;
-    white-space: nowrap;
+    flex-wrap: nowrap;
 }
 
 .bCard {
     max-width: 95%;
     position: relative;
-    margin-left: 7%;
-    z-index: 2;
-    margin-bottom: -7px;
-    margin-right: -5px;
-    
+    height: 100%;
+    width: 100%;
+    margin-left: 0%;
+    z-index: 20;
+    margin-bottom: -1px;
+    margin-right: 5%;
+    margin-top: .0;
 }
-.bCard:hover {
-
- /*Text: call now? */
+/*
+  .bCard:hover .tooltiptext {
 }
-
-    
+*/
 /*===================
-     bCard
+     Scope Section
 =====================*/
+/* Insert HR ~~here~~*/
 .scope {
-    
+    display: flex;
+    gap: 1em;
+    background-color: rgba(112, 112, 112, 0.46);
+    padding: 7%;
+    margin-top: 2%;
+    text-align: left;
 }
+.sColL {
+    position: relative;
+    margin-right: -4.5%;
+    transition: transform 1s ease-in-out;
+}
+.sColL.hover {
+    transition: 1.5s ease;
+    transform: scale(1.5);
+    z-index: 2;
+}
+.sColR {
+    position: relative;
+    padding-left: 5%;
+    border-left: 2px solid #ffffff;
+    margin-right: -1%;
+}
+h4 {
+  text-align: center;
+  transform: translateX(-5%); 
+}
+li {
+  margin-bottom: 15px;
+}
+
 /*===================
      Footer css
 =====================*/
 footer {
     color: white;
-    font-size: .5em;
-    column-count: 3;    
+    font-size: 0.5em;
+    column-count: 3;
 }
-
+credits {
+ /*Nav bar Developed by http://grohit.com/ */
+  grohit {
+    position: absolute;
+    font-size: 12px;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #f1f1f1;
+    color: #000000;
+    text-align: center;
+  }
+}
 a:link {
     color: aqua;
 }

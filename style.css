@@ -42,6 +42,11 @@ img.Banner {
   margin-bottom: 0;
 }
 
+warning {
+     font-size: smaller;
+     color: #ff0000;
+}
+
 h1 {
   padding-top: 5%;
   color: #b05454;

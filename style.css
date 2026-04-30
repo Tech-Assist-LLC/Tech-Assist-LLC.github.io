@@ -42,9 +42,10 @@ img.Banner {
   margin-bottom: 0;
 }
 
-warning {
+p.warning {
      font-size: smaller;
      color: #ff0000;
+     margin: -2%;
 }
 
 h1 {
